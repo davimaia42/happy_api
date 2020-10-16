@@ -1,2 +1,2 @@
 # happy_api
-api rest desenvolvida em node.js
+api rest utilizando node.js (em desenvolvimento)
