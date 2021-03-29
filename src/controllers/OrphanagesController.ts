@@ -24,6 +24,16 @@ export default {
 
         return response.json(orphanagesView.renderMany(orphanages));
     },
+    async destroy(request: Request, response: Response) {
+        const orphanagesRepository = getRepository(Orphanage);
+        await orphanagesRepository.delete(request.params.id);
+        return response.json({message: `orphanage ${request.params.id} deleted`});
+    },
+    async update(request: Request, response: Response){
+        const orphanagesRepository = getRepository(Orphanage);
+        await orphanagesRepository.update(request.params.id, request.body);
+        return response.json({message: `orphanage ${request.params.id} updated`});
+    },
     async create(request: Request, response: Response) {
         const {
             name,
